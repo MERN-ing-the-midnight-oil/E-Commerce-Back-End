@@ -1,0 +1,5 @@
+# git hub will not display these sensitive or lengthy docs as they are here in a git ignore
+
+node_modules
+.DS_Store
+.env
