@@ -5,7 +5,7 @@ THEN I am able to connect to a database using Sequelize
 WHEN I enter schema and seed commands 
 
     mysql> source db/schema.sql; => Query OK, 4 rows affected (0.03 sec) Query OK, 1 row affected (0.00 sec)
-THEN a development database is created 
+THEN a development database is created... 
 mysql> show databases; <=== is it there??
 +--------------------+
 | Database           |
@@ -15,7 +15,8 @@ mysql> show databases; <=== is it there??
 | demo_db            |
 | ecommerce_db       |<==== yup! There it is!
 
-and is seeded with test data
+...and is seeded with test data
+rhyssmoker@Rhyss-MacBook-Air E-Commerce-Back-End % npm run seed 
 
 WHEN I enter the command to invoke the application
 THEN my server is started and the Sequelize models are synced to the MySQL database

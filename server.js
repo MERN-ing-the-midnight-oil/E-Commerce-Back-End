@@ -1,7 +1,10 @@
 //this ssets up the server that listens for user requests (or requests from insomnia, probably)
 
+require("dotenv").config();
 const express = require("express");
 const routes = require("./routes");
+
+console.log(process.env.DB_USER, process.env.DB_NAME);
 
 // import sequelize connection //AKA the connection object
 const sequelize = require("./config/connection");
