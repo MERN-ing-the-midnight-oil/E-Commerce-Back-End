@@ -17,6 +17,9 @@ const categoryData = [
 	{
 		category_name: "Shoes",
 	},
+	{
+		category_name: "MyThing",
+	},
 ];
 //talk to sequelize, go to the Category table, and bulk create categiries
 const seedCategories = () => Category.bulkCreate(categoryData);

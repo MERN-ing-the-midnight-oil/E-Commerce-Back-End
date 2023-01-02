@@ -5,7 +5,7 @@ const Sequelize = require("sequelize");
 require("dotenv").config();
 
 //problem solving an access denied error. this shows that the username and database are coming through fine.
-//so why can't I run npm run seed?
+//so why can't I run npm run seed? //because its seeds not seed
 console.log(process.env.DB_USER, process.env.DB_NAME);
 
 //this is a ternary statement "?"" is an "if" and  ":" is an  "else"

@@ -3,7 +3,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
 class Category extends Model {}
-
+//Category
 Category.init(
 	{
 		// define columns
@@ -13,6 +13,7 @@ Category.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
+		// category_name// String.// Doesn't allow null values.
 		category_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
@@ -29,10 +30,3 @@ Category.init(
 );
 
 module.exports = Category;
-//Category
-
-// category_name
-
-// String.
-
-// Doesn't allow null values.
