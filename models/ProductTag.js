@@ -6,15 +6,16 @@ class ProductTag extends Model {}
 
 ProductTag.init(
 	{
-		// define columns
+		// define columns (attributes of a Product Tag)  id, product_id, and tag_id
+		//product_id references the primary key from the product model, tag_id references the pK from the Tag model
 		id: {
-			// id column
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true,
 			allowNull: false,
 		},
 		product_id: {
+			//PK from the product model
 			type: DataTypes.INTEGER,
 			references: {
 				model: "Product",
@@ -22,6 +23,7 @@ ProductTag.init(
 			},
 		},
 		tag_id: {
+			//PK from the tag model
 			type: DataTypes.INTEGER,
 			references: {
 				model: "Tag",
