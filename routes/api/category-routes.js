@@ -25,6 +25,8 @@ router.get("/:id", async (req, res) => {
 });
 
 // create a new category 
+//The following route just listens and spins on Insomnia!!  Sad!
+//http://localhost:3001/api/categories/
 router.post("/", async (req, res) => {
 	try{
 		const newCategory = await Category.create(req.body);
