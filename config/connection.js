@@ -4,9 +4,8 @@ const Sequelize = require("sequelize");
 //this should go to the .env file and grab DB_NAME, DB_USER and DB_PASSWORD
 require("dotenv").config();
 
-//problem solving an access denied error. this shows that the username and database are coming through fine.
-//so why can't I run npm run seed? //because its seeds not seed
 console.log(process.env.DB_USER, process.env.DB_NAME);
+//rhyssmoker@Rhyss-MacBook-Air E-Commerce-Back-End % node seeds/index.js
 
 //this is a ternary statement "?"" is an "if" and  ":" is an  "else"
 const sequelize = process.env.JAWSDB_URL

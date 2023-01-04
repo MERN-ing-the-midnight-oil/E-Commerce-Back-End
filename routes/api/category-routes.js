@@ -12,19 +12,14 @@ router.get("/", async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-// be sure to include its associated Products
 
-//Find a single category by its PK, include all associated Products
+//Finds a single category by its PK, includes all associated Products
 router.get("/:id", async (req, res) => {
 	try {
 		const singleCategory = await Category.findByPk(req.params.id, {
-			include: [
-				{
-					model: Product,
-					as: "Product",
-				},
-			],
+			include: [Product], //includes the product model because it is already belonging to category, and product is the only sub-model so we don't have to specify
 		});
+		res.status(200).json(singleCategory);
 	} catch (err) {
 		res.status(500).json(err);
 	}
@@ -57,24 +52,6 @@ router.put("/:id", async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
-// UPDATE a user example from class example
-// router.put('/:id', async (req, res) => {
-// 	try {
-// 	  const userData = await User.update(req.body, {
-// 		where: {
-// 		  id: req.params.id,
-// 		},
-// 	  });
-// 	  if (!userData[0]) {
-// 		res.status(404).json({ message: 'No user with this id!' });
-// 		return;
-// 	  }
-// 	  res.status(200).json(userData);
-// 	} catch (err) {
-// 	  res.status(500).json(err);
-// 	}
-//   });
 
 // delete a category by its `id` value
 router.delete("/:id", async (req, res) => {
