@@ -1,10 +1,8 @@
 const router = require("express").Router();
 const { Category, Product } = require("../../models");
 
-// The `/api/categories` endpoint
-
+// finds all categories
 router.get("/", async (req, res) => {
-	// finds all categories
 	try {
 		const categoryData = await Category.findAll();
 		res.status(200).json(categoryData);
@@ -17,7 +15,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
 	try {
 		const singleCategory = await Category.findByPk(req.params.id, {
-			include: [Product], //includes the product model because it is already belonging to category, and product is the only sub-model so we don't have to specify
+			include: [Product], //this simpler syntax seems to work
 		});
 		res.status(200).json(singleCategory);
 	} catch (err) {
@@ -65,7 +63,6 @@ router.delete("/:id", async (req, res) => {
 			res.status(404).json({ message: "No Category was found with that ID!" });
 			return;
 		}
-
 		res.status(200).json(deleteMe);
 	} catch (err) {
 		res.status(500).json(err);
